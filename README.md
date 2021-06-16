@@ -21,6 +21,4 @@ Cloned from
 
 - [Here](https://dribbble.com/shots/15826738-Flight-Booking)
 
-Many Thanks to
-
-- [Manoj Rajpu](https://dribbble.com/manojrajput)
+Many Thanks to [Manoj Rajpu](https://dribbble.com/manojrajput)
