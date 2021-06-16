@@ -120,11 +120,15 @@ class Route {
     this.id,
     this.flightNo,
     this.operatingCarrier,
+    this.mapIdfrom,
+    this.mapIdto,
   });
 
   final String id;
   final int flightNo;
   final String operatingCarrier;
+  final String mapIdfrom;
+  final String mapIdto;
 
   factory Route.fromJson(Map<String, dynamic> json) => Route(
         id: json["id"] == null ? null : json["id"],
@@ -132,11 +136,15 @@ class Route {
         operatingCarrier: json["operating_carrier"] == null
             ? null
             : json["operating_carrier"],
+        mapIdfrom: json["mapIdfrom"] == null ? null : json["mapIdfrom"],
+        mapIdto: json["mapIdto"] == null ? null : json["mapIdto"],
       );
 
   Map<String, dynamic> toJson() => {
         "id": id == null ? null : id,
         "flight_no": flightNo == null ? null : flightNo,
         "operating_carrier": operatingCarrier == null ? null : operatingCarrier,
+        "mapIdfrom": mapIdfrom == null ? null : mapIdfrom,
+        "mapIdto": mapIdto == null ? null : mapIdto,
       };
 }

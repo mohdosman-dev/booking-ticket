@@ -87,7 +87,7 @@ class _FlightDetailsState extends State<FlightDetails> {
                           placeholder: 'assets/images/logo.png',
                           fit: BoxFit.cover,
                           image:
-                              'https://images.kiwi.com/airlines/128x128/${widget.flight.airlines[0]}.png',
+                              'https://images.kiwi.com/photos/220x165/${widget.flight.route[0].mapIdto}.jpg',
                         ).image,
                       ),
                     ),
