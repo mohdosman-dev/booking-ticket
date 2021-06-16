@@ -10,6 +10,7 @@ import 'package:booking_smt_test/widgets/app_text_field.dart';
 import 'package:booking_smt_test/widgets/from_to_widget.dart';
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 
 class HomePage extends StatefulWidget {
@@ -144,9 +145,7 @@ class _HomePageState extends State<HomePage> {
                     }
 
                     if (snapshot.hasError) {
-                      return Container(
-                        child: Text('Error'),
-                      );
+                      return NoFlightWidget();
                     }
 
                     if (snapshot.hasData) {
@@ -272,6 +271,55 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ],
+    );
+  }
+}
+
+class NoFlightWidget extends StatelessWidget {
+  const NoFlightWidget({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SvgPicture.asset(
+            'assets/icons/no_flight.svg',
+            width: 200,
+            height: 200,
+          ),
+          SizedBox(height: 30),
+          Text(
+            'No flights found',
+            style: TextStyle(
+              fontSize: 20,
+              color: const Color(0xff000000),
+              fontWeight: FontWeight.w700,
+              height: 0.7037037037037037,
+            ),
+            textHeightBehavior: TextHeightBehavior(
+                applyHeightToFirstAscent: false),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 8),
+          Text(
+            'Please check search parameters',
+            style: TextStyle(
+              fontFamily: 'Droid Sans Arabic',
+              fontSize: 15,
+              color: const Color(0xff000000),
+              letterSpacing: 0.24,
+              height: 1.6666666666666667,
+            ),
+            textHeightBehavior: TextHeightBehavior(
+                applyHeightToFirstAscent: false),
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
     );
   }
 }

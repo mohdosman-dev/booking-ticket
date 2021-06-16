@@ -12,4 +12,8 @@ const List<Map<String, dynamic>> iataList = [
   {'iata': 'KRT', 'name': 'Khartoum'},
   {'iata': 'CAI', 'name': 'Cairo'},
   {'iata': 'DWC', 'name': 'Dubai'},
+  {'iata': 'AHB', 'name': 'Abha'},
+  {'iata': 'AUH', 'name': 'Abu Dhabi'},
+  {'iata': 'ADD', 'name': 'Addis Ababa'},
+  {'iata': 'AEX', 'name': 'Alexandria'},
 ];

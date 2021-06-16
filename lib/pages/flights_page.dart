@@ -1,5 +1,6 @@
 import 'package:booking_smt_test/model/flight.dart';
 import 'package:booking_smt_test/pages/flight_details.dart';
+import 'package:booking_smt_test/pages/home_page.dart';
 import 'package:booking_smt_test/repositories/flight_repository.dart';
 import 'package:booking_smt_test/widgets/app_badge.dart';
 import 'package:booking_smt_test/widgets/from_to_widget.dart';
@@ -97,7 +98,7 @@ class _FlightsPageState extends State<FlightsPage> {
 
                   if (snapshot.hasError) {
                     return Center(
-                      child: Text('Error'),
+                      child: NoFlightWidget(),
                     );
                   }
                   if (snapshot.hasData) {
