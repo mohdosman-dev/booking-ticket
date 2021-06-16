@@ -12,7 +12,13 @@ class FlightReposiroty {
       String dateFrom = '',
       String dateTo = ''}) async {
     Map<String, dynamic> response = await _provider
-        .getHTTP('flights?flyFrom=JED&to=$iataTo&limit=50&asc=0');
+        .getHTTP('flights?flyFrom=$iataFrom&to=$iataTo&limit=50&asc=0');
+    return (response['data'] as List).map((e) => Flight.fromJson(e)).toList();
+  }
+
+  Future<List<Flight>> search(Map<String, dynamic> query) async {
+    Map<String, dynamic> response =
+        await _provider.getHTTP('flights?limit=50&asc=0', body: query);
     return (response['data'] as List).map((e) => Flight.fromJson(e)).toList();
   }
 }

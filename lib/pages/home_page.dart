@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:booking_smt_test/model/flight.dart';
 import 'package:booking_smt_test/pages/flights_page.dart';
+import 'package:booking_smt_test/pages/search_page.dart';
 import 'package:booking_smt_test/provider/flight_provider.dart';
 import 'package:booking_smt_test/repositories/flight_repository.dart';
 import 'package:booking_smt_test/utils/constants.dart';
@@ -101,8 +102,21 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(height: 30),
                       AppTextField(
                         readOnly: true,
-                        onTap: () {
+                        hintText: 'Search',
+                        onTap: () async {
                           log('Move to search page');
+                          Map<String, dynamic> searchFilter =
+                              await Navigator.push(context, MaterialPageRoute(
+                            builder: (context) {
+                              return SearchPage();
+                            },
+                          ));
+
+                          if (searchFilter != null) {
+                            setState(() {
+                              this._flights = _reposiroty.search(searchFilter);
+                            });
+                          }
                         },
                         prefix: Icon(
                           Icons.search,
